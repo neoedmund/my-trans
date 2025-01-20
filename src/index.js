@@ -3,15 +3,19 @@ const scope = [ 'en' , 'ja' , 'zh' ] ;
 export default {
 	async fetch ( request , env ) {
 		const url = new URL ( request . url )
-		const params = new URLSearchParams ( url . search )
 
 		if ( url . pathname == '/favicon.ico' ) {
 			return env . ASSETS . fetch ( request )
 		}
 
+		const params = new URLSearchParams ( url . search )
+
 		var lang = params . get ( 'lang' )
-		if ( lang == 'cn' ) lang = 'zh' ;
-		if ( lang == 'jp' ) lang = 'ja' ;
+		if ( lang == 'cn' ) {
+			lang = 'zh'
+		} else if ( lang == 'jp' ) {
+			lang = 'ja'
+		}
 		const text = params . get ( 'text' )
 		if ( isEmpty ( lang ) || isEmpty ( text ) || ( ! scope . includes ( lang ) ) ) {
 			return Response . json ( { 'param' : "lang['en','ja','zh'],text" } )
