@@ -2,7 +2,13 @@ const scope = [ 'en' , 'ja' , 'zh' ] ;
 
 export default {
 	async fetch ( request , env ) {
-		const params = new URLSearchParams ( new URL ( request . url ) . search )
+		const url = new URL ( request . url )
+		const params = new URLSearchParams ( url . search )
+
+		if ( url . pathname == '/favicon.ico' ) {
+			return env . ASSETS . fetch ( request )
+		}
+
 		var lang = params . get ( 'lang' )
 		if ( lang == 'cn' ) lang = 'zh' ;
 		if ( lang == 'jp' ) lang = 'ja' ;

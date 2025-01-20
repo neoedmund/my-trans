@@ -2,10 +2,11 @@ name = "my-trans"
 main = "src/index.js"
 compatibility_date = "2022-05-06"
 
-site = { bucket = "./public" }
+assets = { directory = "./public", binding = "ASSETS" }
 
 [ai]
 binding = "AI"
 
 [observability.logs]
 enabled = true
+
