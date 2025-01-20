@@ -1,6 +1,6 @@
 {
-  "name": "worker-sites-template",
-  "version": "0.0.0",
+  "name": "my-trans",
+  "version": "0.1.0",
   "devDependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
     "wrangler": "0.0.30"
