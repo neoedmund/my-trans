@@ -10,7 +10,7 @@ export default {
 		if ( isEmpty ( lang ) || isEmpty ( text ) || ( ! scope . includes ( lang ) ) ) {
 			return Response . json ( { 'param' : "lang['en','ja','zh'],text" } )
 		}
-		console . log ( 'lang' , lang , 'text' , text )
+		console . log ( 'lang:' , lang , ', text:' , text )
 		var req = [ ]
 		for ( let lang0 of scope ) {
 			if ( lang0 == lang ) continue ;
