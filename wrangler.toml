@@ -1,4 +1,4 @@
-name = "worker-sites-template"
+name = "my-trans"
 main = "src/index.js"
 compatibility_date = "2022-05-06"
 
@@ -6,3 +6,4 @@ site = { bucket = "./public" }
 
 [ai]
 binding = "AI"
+
